@@ -1,16 +1,17 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCss = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
-  mode: "development",
-  target: "web",
-  devtool: "source-map",
+  mode: "production",
+  target: "browserslist",
   entry: {
     main: path.resolve(__dirname, "./src/index.js"),
   },
   output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(__dirname, "./prod"),
     filename: "[name].[contenthash:8].js",
     clean: true,
   },
@@ -19,13 +20,31 @@ module.exports = {
       template: path.resolve(__dirname, "./src/index.html"), // шаблон
       filename: "index.html", // название выходного файла
     }),
-    new CleanWebpackPlugin(),
+    new MiniCss({
+      filename: "main.css",
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.(c|sc|sa|)ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [
+          MiniCss.loader,
+          "css-loader",
+          "sass-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  "autoprefixer",
+                  "postcss-preset-env",
+                  "at-rule-packer",
+                ],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.html$/,
@@ -65,7 +84,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(jpe?g|png|gif|svg|webp)$/,
+        test: /\.(jpe?g|png|gif|svg|webp)$/i,
         type: "asset/resource",
         generator: {
           filename: "images/[name]-[contenthash][ext]",
@@ -80,11 +99,29 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    compress: false,
-    open: true,
-    port: 9000,
-    hot: true,
-    allowedHosts: "all",
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.sharpMinify,
+          options: {
+            encodeOptions: {
+              jpeg: {
+                quality: 75,
+              },
+              webp: {
+                quality: 85,
+              },
+              avif: {
+                quality: 85,
+              },
+              png: {},
+              gif: {},
+            },
+          },
+        },
+      }),
+    ],
   },
 };
