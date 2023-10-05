@@ -3,12 +3,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCss = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
   target: "browserslist",
   entry: {
     main: path.resolve(__dirname, "./src/index.js"),
+    post: path.resolve(__dirname, "./src/post.js"),
   },
   output: {
     path: path.resolve(__dirname, "./prod"),
@@ -17,9 +19,18 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: "Index Page",
       template: path.resolve(__dirname, "./src/index.html"), // шаблон
       filename: "index.html", // название выходного файла
+      chunks: ["main"],
     }),
+    new HtmlWebpackPlugin({
+      title: "Post Page",
+      template: path.resolve(__dirname, "./src/post.html"), // шаблон
+      filename: "post.html", // название выходного файла
+      chunks: ["post"],
+    }),
+    new CleanWebpackPlugin(),
     new MiniCss({
       filename: "main.css",
     }),
