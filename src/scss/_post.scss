@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+@import "base";
 
 @font-face {
     font-family: 'Fira Sans';
@@ -8,7 +9,6 @@
 }
 
 body {
-    font-display: swap;
     background: #f1f1f1;
     display: flex;
     flex-direction: column;
@@ -34,9 +34,11 @@ $color_grey_dark: #a2a2a2;
     font-family: "Fira Sans", sans-serif;
 }
 
-.blog-card {
+.blog-card-post {
     display: flex;
+    max-width: 1900px;
     flex-direction: column;
+    flex: 1 0 100%;
     margin: 1rem auto;
     box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
     margin-bottom: 1.6%;
@@ -56,28 +58,24 @@ $color_grey_dark: #a2a2a2;
     }
 
     &:hover {
-        .photo {
-            transform: scale(1.3);
-        }
-
-        .photo1 {
+        .post-photo {
             transform: scale(1.3);
         }
     }
 
     .meta {
         position: relative;
+        display: flex;
         z-index: 0;
-        height: 200px;
+        height: auto;
     }
 
-    .photo {
-        position: absolute;
+    .post-photo {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        height:500px;
         background-image: url(../images/image-1.jpg);
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
         background-size: cover;
         background-position: center;
         transition: transform 0.2s;
@@ -101,6 +99,7 @@ $color_grey_dark: #a2a2a2;
         color: $color_white;
         padding: 10px;
         width: 100%;
+        max-width: 100%;
         font-size: 0.9rem;
 
         a {
@@ -140,8 +139,9 @@ $color_grey_dark: #a2a2a2;
         }
     }
 
-    .description {
+    .description-post {
         padding: 1rem;
+        text-align: justify;
         background: $color_white;
         position: relative;
         z-index: 1;
@@ -192,44 +192,18 @@ $color_grey_dark: #a2a2a2;
     }
 
     @media (min-width: 640px) {
-        flex-direction: row;
-        max-width: 700px;
+        flex-direction: column;
+        max-width: 100%;
 
         .meta {
-            flex-basis: 40%;
+            max-width: 100%;
             height: auto;
         }
 
-        .description {
-            flex-basis: 60%;
+        .description-post {
+            max-width: 100%;
 
-            &:before {
-                transform: skewX(0deg);
-                content: "";
-                background: #fff;
-                width: 30px;
-                position: absolute;
-                left: -10px;
-                top: 0;
-                bottom: 0;
-                z-index: -1;
-            }
         }
 
-        &.alt {
-            flex-direction: row-reverse;
-
-            .description {
-                &:before {
-                    left: inherit;
-                    right: -10px;
-                    transform: skew(0deg);
-                }
-            }
-
-            .details {
-                padding-left: 25px;
-            }
-        }
     }
 }
