@@ -8,7 +8,7 @@ module.exports = {
   devtool: "source-map",
   entry: {
     main: path.resolve(__dirname, "./src/index.js"),
-    post: path.resolve(__dirname, './src/post.js')
+    post: path.resolve(__dirname, "./src/post.js"),
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -17,16 +17,16 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Index Page',
+      title: "Index Page",
       template: path.resolve(__dirname, "./src/index.html"), // шаблон
       filename: "index.html", // название выходного файла
-      chunks: ['main']
+      chunks: ["main"],
     }),
     new HtmlWebpackPlugin({
-      title: 'Post Page',
+      title: "Post Page",
       template: path.resolve(__dirname, "./src/post.html"), // шаблон
       filename: "post.html", // название выходного файла
-      chunks: ['post']
+      chunks: ["post"],
     }),
     new CleanWebpackPlugin(),
   ],
