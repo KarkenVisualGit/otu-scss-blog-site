@@ -12,6 +12,7 @@ module.exports = {
     main: path.resolve(__dirname, "./src/index.js"),
     post: path.resolve(__dirname, "./src/post.js"),
     posts: path.resolve(__dirname, "./src/posts.js"),
+    feedback: path.resolve(__dirname, "./src/feedback.js"),
   },
   output: {
     path: path.resolve(__dirname, "./prod"),
@@ -22,21 +23,27 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Index Page",
-      template: path.resolve(__dirname, "./src/index.html"), // шаблон
-      filename: "index.html", // название выходного файла
+      template: path.resolve(__dirname, "./src/index.html"),
+      filename: "index.html",
       chunks: ["main"],
     }),
     new HtmlWebpackPlugin({
       title: "Post Page",
-      template: path.resolve(__dirname, "./src/post.html"), // шаблон
-      filename: "post.html", // название выходного файла
+      template: path.resolve(__dirname, "./src/post.html"),
+      filename: "post.html",
       chunks: ["post"],
     }),
     new HtmlWebpackPlugin({
       title: "Posts Page",
-      template: path.resolve(__dirname, "./src/posts.html"), // шаблон
-      filename: "posts.html", // название выходного файла
+      template: path.resolve(__dirname, "./src/posts.html"),
+      filename: "posts.html",
       chunks: ["posts"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "Feedback",
+      template: path.resolve(__dirname, "./src/feedback.html"),
+      filename: "feedback.html",
+      chunks: ["feedback"],
     }),
     new CleanWebpackPlugin(),
     new MiniCss({
