@@ -1,7 +1,5 @@
 name: Deploy to GitHubPages
 on:
-  push:
-    branches: ["blog-site"]
   pull_request:
     branches: ["blog-site"]
 permissions:

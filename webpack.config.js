@@ -9,10 +9,12 @@ module.exports = {
   entry: {
     main: path.resolve(__dirname, "./src/index.js"),
     post: path.resolve(__dirname, "./src/post.js"),
+    posts: path.resolve(__dirname, "./src/posts.js"),
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "[name].[contenthash:8].js",
+    chunkFilename: "[id].[chunkhash].js",
     clean: true,
   },
   plugins: [
@@ -27,6 +29,12 @@ module.exports = {
       template: path.resolve(__dirname, "./src/post.html"), // шаблон
       filename: "post.html", // название выходного файла
       chunks: ["post"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "Posts Page",
+      template: path.resolve(__dirname, "./src/posts.html"), // шаблон
+      filename: "posts.html", // название выходного файла
+      chunks: ["posts"],
     }),
     new CleanWebpackPlugin(),
   ],
