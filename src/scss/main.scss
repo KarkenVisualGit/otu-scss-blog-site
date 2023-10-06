@@ -58,6 +58,7 @@ $color_grey_dark: #a2a2a2;
     .photo {
       transform: scale(1.3);
     }
+
     .photo1 {
       transform: scale(1.3);
     }
@@ -266,6 +267,53 @@ $color_grey_dark: #a2a2a2;
 
       .details {
         padding-left: 25px;
+      }
+    }
+  }
+}
+
+.deviceWidth {
+  display: flex;
+  justify-content: center;
+  width: 1280px;
+  max-width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+
+  tr {
+    td {
+      &.dateCell {
+        table {
+          tr {
+            td.date {
+              background-color: #3c707e;
+              color: #fff;
+              font-size: 12px;
+              font-weight: bold;
+              text-align: center;
+              -webkit-text-size-adjust: none;
+              padding: 4px 8px;
+            }
+          }
+        }
+      }
+
+      &.textCell {
+        font-size: 11px;
+        color: #656565;
+        text-align: left;
+        padding-left: 8px;
+        vertical-align: middle;
+
+        .link {
+          font-size: 14px;
+          font-weight: bold;
+          color: #000000;
+          text-align: left;
+          text-decoration: none;
+        }
       }
     }
   }
