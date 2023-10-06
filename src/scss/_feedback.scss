@@ -2,170 +2,170 @@
 @import "base";
 
 html {
-    background: #f1f1f1;
-    background-size: cover;
-    height: 100%;
+  background: #f1f1f1;
+  background-size: cover;
+  height: 100%;
 }
 
 .blog-nav,
 .footer_blog {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    margin: 10px;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    font-family: "Fira Sans", sans-serif;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 10px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fira Sans", sans-serif;
+  color: #03658c;
+
+  a {
     color: #03658c;
+    text-decoration: none;
+  }
 
-    a {
-        color: #03658c;
-        text-decoration: none;
-    }
-
-    @media only screen and (max-width: 580px) {
-        flex-direction: column;
-    }
+  @media only screen and (max-width: 580px) {
+    flex-direction: column;
+  }
 }
 
 .page {
-    &__form-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding-top: 0;
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  &__form {
+    background-color: #d2d0d0;
+    padding: 35px 35px 50px;
+    width: 450px;
+    border-radius: 7px;
+
+    @media only screen and (max-width: 580px) {
+      width: 88%;
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+  }
+
+  &__input {
+    color: #b9b8b8;
+
+    font: {
+      family: "Fira Sans", sans-serif;
+      weight: 500;
+      size: 18px;
     }
 
-    &__form {
-        background-color: #d2d0d0;
-        padding: 35px 35px 50px;
-        width: 450px;
-        border-radius: 7px;
+    border-radius: 0;
+    line-height: 22px;
+    background-color: #fbfbfb;
+    padding: 13px 13px 13px 54px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 3px solid rgba(0, 0, 0, 0);
 
-        @media only screen and (max-width: 580px) {
-            width: 88%;
-            padding-left: 3%;
-            padding-right: 3%;
-        }
+    &:focus {
+      background: #fff;
+      box-shadow: 0;
+      border: 3px solid #3498db;
+      color: #3498db;
+      outline: none;
+      padding: 13px 13px 13px 54px;
     }
 
-    &__input {
-        color: #b9b8b8;
+    &--focused {
+      color: #30aed6;
+      border: #30aed6 solid 3px;
+    }
 
-        font: {
-            family: "Fira Sans", sans-serif;
-            weight: 500;
-            size: 18px;
-        }
+    &--name {
+      background: {
+        image: url(../images/user-svgrepo-com.svg);
+        size: 30px 30px;
+        position: 5% 50%;
+        repeat: no-repeat;
+      }
+    }
 
-        border-radius: 0;
-        line-height: 22px;
+    &--email {
+      background: {
+        image: url(../images/email-1-svgrepo-com.svg);
+        size: 30px 30px;
+        position: 5% 50%;
+        repeat: no-repeat;
+      }
+    }
+
+    &--comment {
+      background: {
+        image: url(../images/comment-5-svgrepo-com.svg);
+        size: 30px 30px;
+        position: 5% 50%;
+        repeat: no-repeat;
+      }
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
+
+    &:hover,
+    &:focus {
+      background-color: #fbfbfb;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--blue {
+      font: {
+        family: "Fira Sans", sans-serif;
+        size: 24px;
+        weight: 700;
+      }
+
+      width: 100%;
+      border: #fbfbfb solid 4px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: #fbfbfb;
+      padding-top: 22px;
+      padding-bottom: 22px;
+      transition: all 0.3s;
+      margin-top: -4px;
+
+      &:hover {
         background-color: #fbfbfb;
-        padding: 13px 13px 13px 54px;
-        margin-bottom: 10px;
-        width: 100%;
-        box-sizing: border-box;
-        border: 3px solid rgba(0, 0, 0, 0);
-
-        &:focus {
-            background: #fff;
-            box-shadow: 0;
-            border: 3px solid #3498db;
-            color: #3498db;
-            outline: none;
-            padding: 13px 13px 13px 54px;
-        }
-
-        &--focused {
-            color: #30aed6;
-            border: #30aed6 solid 3px;
-        }
-
-        &--name {
-            background: {
-                image: url(../images/user-svgrepo-com.svg);
-                size: 30px 30px;
-                position: 5% 50%;
-                repeat: no-repeat;
-            }
-        }
-
-        &--email {
-            background: {
-                image: url(../images/email-1-svgrepo-com.svg);
-                size: 30px 30px;
-                position: 5% 50%;
-                repeat: no-repeat;
-            }
-        }
-
-        &--comment {
-            background: {
-                image: url(../images/comment-5-svgrepo-com.svg);
-                size: 30px 30px;
-                position: 5% 50%;
-                repeat: no-repeat;
-            }
-        }
+        color: #0493bd;
+      }
     }
 
-    &__textarea {
-        width: 100%;
-        height: 150px;
-        line-height: 150%;
-        resize: vertical;
-
-        &:hover,
-        &:focus {
-            background-color: #fbfbfb;
-        }
+    &--submit:hover {
+      color: #3498db;
     }
+  }
 
-    &__button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  &__animation {
+    width: 0px;
+    height: 74px;
+    background-color: #fbfbfb;
+    transition: 0.3s ease;
 
-        &--blue {
-            font: {
-                family: "Fira Sans", sans-serif;
-                size: 24px;
-                weight: 700;
-            }
-
-            width: 100%;
-            border: #fbfbfb solid 4px;
-            cursor: pointer;
-            background-color: #3498db;
-            color: #fbfbfb;
-            padding-top: 22px;
-            padding-bottom: 22px;
-            transition: all 0.3s;
-            margin-top: -4px;
-
-            &:hover {
-                background-color: #fbfbfb;
-                color: #0493bd;
-            }
-        }
-
-        &--submit:hover {
-            color: #3498db;
-        }
+    .button--submit:hover & {
+      width: 100%;
+      background-color: #fbfbfb;
     }
-
-    &__animation {
-        width: 0px;
-        height: 74px;
-        background-color: #fbfbfb;
-        transition: .3s ease;
-
-        .button--submit:hover & {
-            width: 100%;
-            background-color: #fbfbfb;
-        }
-    }
+  }
 }
