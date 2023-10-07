@@ -6,11 +6,9 @@ $azul: #03658c;
 $detaile: #c7cacb;
 $fondo: #dee1e3;
 
-
 .blog-card {
   max-width: 1900px;
   flex: 1 0 100%;
-
 
   &:hover {
     .post-photo {
@@ -295,8 +293,7 @@ ul {
       left: -55px;
     }
 
-    .comments__avatar 
-    .comments__avatar__person {
+    .comments__avatar .comments__avatar__person {
       width: 50px;
       height: 50px;
     }
