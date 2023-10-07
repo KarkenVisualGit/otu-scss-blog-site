@@ -1,143 +1,144 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Posts</title>
-    <script
-      src="https://kit.fontawesome.com/4f1626dd76.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body>
-    <header>
-      <nav class="blog-nav">
-        <a href="index.html">Главная</a>
-        <a href="feedback.html">Обратная связь</a>
-        <a href="posts.html">Список записей</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posts</title>
+  <script src="https://kit.fontawesome.com/4f1626dd76.js" crossorigin="anonymous"></script>
+</head>
 
-    <main>
-      <div class="blog-card">
-        <div class="meta">
-          <div class="photo"></div>
-          <ul class="details">
-            <li class="author"><a href="#">John Doe</a></li>
-            <li class="date">Oct. 25, 2023</li>
-            <li class="tags">
-              <ul>
-                <li><a href="#">Learn</a></li>
-                <li><a href="#">Code</a></li>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="description">
-          <h1 class="blog__title">Learning to Code</h1>
-          <h2 class="blog__subtitle">Opening a door to the future</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
-            dolorum architecto obcaecati enim dicta praesentium, quam nobis!
-            Neque ad aliquam facilis numquam. Veritatis, sit.
-          </p>
-          <p class="read-more">
-            <a href="post.html">Read More</a>
-          </p>
-        </div>
-      </div>
-      <div class="blog-card alt">
-        <div class="meta">
-          <div class="photo1"></div>
-          <ul class="details">
-            <li class="author"><a href="#">Jane Doe</a></li>
-            <li class="date">Sep. 24, 2023</li>
-            <li class="tags">
-              <ul>
-                <li><a href="#">Learn</a></li>
-                <li><a href="#">Code</a></li>
-                <li><a href="#">JavaScript</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="description">
-          <h2 class="blog__title">Mastering the Language</h2>
-          <h3 class="blog__subtitle">Java is not the same as JavaScript</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
-            dolorum architecto obcaecati enim dicta praesentium, quam nobis!
-            Neque ad aliquam facilis numquam. Veritatis, sit.
-          </p>
-          <p class="read-more">
-            <a href="post.html">Read More</a>
-          </p>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="meta">
-          <div class="photo"></div>
-          <ul class="details">
-            <li class="author"><a href="#">John Doe</a></li>
-            <li class="date">Aug. 24, 2023</li>
-            <li class="tags">
-              <ul>
-                <li><a href="#">Learn</a></li>
-                <li><a href="#">Code</a></li>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="description">
-          <h2 class="blog__title">Learning to Code</h2>
-          <h3 class="blog__subtitle">Opening a door to the future</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
-            dolorum architecto obcaecati enim dicta praesentium, quam nobis!
-            Neque ad aliquam facilis numquam. Veritatis, sit.
-          </p>
-          <p class="read-more">
-            <a href="post.html">Read More</a>
-          </p>
-        </div>
-      </div>
-      <div class="blog-card alt">
-        <div class="meta">
-          <div class="photo1"></div>
-          <ul class="details">
-            <li class="author"><a href="#">Jane Doe</a></li>
-            <li class="date">July. 15, 2023</li>
-            <li class="tags">
-              <ul>
-                <li><a href="#">Learn</a></li>
-                <li><a href="#">Code</a></li>
-                <li><a href="#">JavaScript</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="description">
-          <h2 class="blog__title">Mastering the Language</h2>
-          <h3 class="blog__subtitle">Java is not the same as JavaScript</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
-            dolorum architecto obcaecati enim dicta praesentium, quam nobis!
-            Neque ad aliquam facilis numquam. Veritatis, sit.
-          </p>
-          <p class="read-more">
-            <a href="post.html">Read More</a>
-          </p>
-        </div>
-      </div>
-    </main>
+<body>
+  <header>
+    <nav class="blog-nav">
+      <a href="index.html">Главная</a>
+      <a href="feedback.html">Обратная связь</a>
+      <a href="posts.html">Список записей</a>
+    </nav>
+  </header>
 
-    <footer class="footer_blog">
-      <p>Сайт-блог © 2023</p>
-    </footer>
-  </body>
+  <main>
+    <div class="blog-card">
+      <div class="blog-card__meta">
+        <div class="blog-card__photo"></div>
+        <ul class="blog-card__details">
+          <li class="blog-card__details--author"><a href="#">John Doe</a></li>
+          <li class="blog-card__details--date">Oct. 04, 2023</li>
+          <li class="blog-card__details--tags">
+            <ul>
+              <li><a href="#">Learn</a></li>
+              <li><a href="#">Code</a></li>
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="blog-card__description">
+        <h1 class="blog-card__description--title">Learning to Code</h1>
+        <h2 class="blog-card__description--subtitle">Opening a door to the future</h2>
+        <p class="blog-card__description--text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+          dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+          Neque ad aliquam facilis numquam. Veritatis, sit.
+        </p>
+        <p class="blog-card__description--read-more">
+          <a href="post.html">Read More</a>
+        </p>
+      </div>
+    </div>
+    <div class="blog-card alt">
+      <div class="blog-card__meta">
+        <div class="blog-card__photo1"></div>
+        <ul class="blog-card__details">
+          <li class="blog-card__details--author"><a href="#">John Doe</a></li>
+          <li class="blog-card__details--date">Sep. 24, 2023</li>
+          <li class="blog-card__details--tags">
+            <ul>
+              <li><a href="#">Learn</a></li>
+              <li><a href="#">Code</a></li>
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="blog-card__description">
+        <h1 class="blog-card__description--title">Mastering the Language</h1>
+        <h2 class="blog-card__description--subtitle">Java is not the same as JavaScript</h2>
+        <p class="blog-card__description--text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+          dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+          Neque ad aliquam facilis numquam. Veritatis, sit.
+        </p>
+        <p class="blog-card__description--read-more">
+          <a href="post.html">Read More</a>
+        </p>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-card__meta">
+        <div class="blog-card__photo"></div>
+        <ul class="blog-card__details">
+          <li class="blog-card__details--author"><a href="#">John Doe</a></li>
+          <li class="blog-card__details--date">Aug. 24, 2023</li>
+          <li class="blog-card__details--tags">
+            <ul>
+              <li><a href="#">Learn</a></li>
+              <li><a href="#">Code</a></li>
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="blog-card__description">
+        <h1 class="blog-card__description--title">Learning to Code</h1>
+        <h2 class="blog-card__description--subtitle">Opening a door to the future</h2>
+        <p class="blog-card__description--text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+          dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+          Neque ad aliquam facilis numquam. Veritatis, sit.
+        </p>
+        <p class="blog-card__description--read-more">
+          <a href="post.html">Read More</a>
+        </p>
+      </div>
+    </div>
+    <div class="blog-card alt">
+      <div class="blog-card__meta">
+        <div class="blog-card__photo1"></div>
+        <ul class="blog-card__details">
+          <li class="blog-card__details--author"><a href="#">John Doe</a></li>
+          <li class="blog-card__details--date">Jul. 24, 2023</li>
+          <li class="blog-card__details--tags">
+            <ul>
+              <li><a href="#">Learn</a></li>
+              <li><a href="#">Code</a></li>
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="blog-card__description">
+        <h1 class="blog-card__description--title">Mastering the Language</h1>
+        <h2 class="blog-card__description--subtitle">Java is not the same as JavaScript</h2>
+        <p class="blog-card__description--text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+          dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+          Neque ad aliquam facilis numquam. Veritatis, sit.
+        </p>
+        <p class="blog-card__description--read-more">
+          <a href="post.html">Read More</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer_blog">
+    <p>Сайт-блог © 2023</p>
+  </footer>
+</body>
+
 </html>

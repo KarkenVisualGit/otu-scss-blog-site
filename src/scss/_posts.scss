@@ -2,7 +2,7 @@
 @import "common";
 
 .blog-card {
-  .photo1 {
+  &__photo1 {
     position: absolute;
     background-image: url(../images/image-2.jpg);
     top: 0;
@@ -18,14 +18,14 @@
     &.alt {
       flex-direction: row-reverse;
 
-      .description {
+      .blog-card__description {
         &:before {
           left: inherit;
           right: -10px;
         }
       }
 
-      .details {
+      .blog-card__details {
         padding-left: 25px;
       }
     }

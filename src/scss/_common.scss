@@ -57,22 +57,22 @@ $color_grey_dark: #a2a2a2;
   }
 
   &:hover {
-    .photo {
+    .blog-card__photo {
       transform: scale(1.3);
     }
 
-    .photo1 {
+    .blog-card__photo1 {
       transform: scale(1.3);
     }
   }
 
-  .meta {
+  &__meta {
     position: relative;
     z-index: 0;
     height: 200px;
   }
 
-  .photo {
+  &__photo {
     position: absolute;
     background-image: url(../images/image-1.jpg);
     top: 0;
@@ -84,14 +84,14 @@ $color_grey_dark: #a2a2a2;
     transition: transform 0.2s;
   }
 
-  .details,
-  .details ul {
+  &__details,
+  &__details ul {
     margin: auto;
     padding: 0;
     list-style: none;
   }
 
-  .details {
+  &__details {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -112,19 +112,19 @@ $color_grey_dark: #a2a2a2;
       display: inline-block;
     }
 
-    .author:before {
+    &--author:before {
       font: var(--fa-font-solid);
       margin-right: 10px;
       content: "\f007";
     }
 
-    .date:before {
+    &--date:before {
       font: var(--fa-font-solid);
       margin-right: 10px;
       content: "\f133";
     }
 
-    .tags {
+    &--tags {
       ul:before {
         font: var(--fa-font-solid);
         content: "\f02b";
@@ -141,7 +141,7 @@ $color_grey_dark: #a2a2a2;
     }
   }
 
-  .description {
+  &__description {
     padding: 1rem;
     background: $color_white;
     position: relative;
@@ -152,13 +152,13 @@ $color_grey_dark: #a2a2a2;
       font-family: "Fira Sans", sans-serif;
     }
 
-    .blog__title {
+    &--title {
       line-height: 1;
       margin: 0;
       font-size: 1.7rem;
     }
 
-    .blog__subtitle {
+    &--subtitle {
       font-size: 1rem;
       font-weight: 300;
       text-transform: uppercase;
@@ -166,7 +166,7 @@ $color_grey_dark: #a2a2a2;
       margin-top: 5px;
     }
 
-    .read-more {
+    &--read-more {
       text-align: right;
 
       a {
@@ -214,7 +214,7 @@ $color_grey_dark: #a2a2a2;
   }
 
   &:hover {
-    .details {
+    .blog-card__details {
       left: 0%;
     }
   }
@@ -223,12 +223,12 @@ $color_grey_dark: #a2a2a2;
     flex-direction: row;
     max-width: 700px;
 
-    .meta {
+    .blog-card__meta {
       flex-basis: 40%;
       height: auto;
     }
 
-    .description {
+    .blog-card__description {
       flex-basis: 60%;
 
       &:before {
