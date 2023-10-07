@@ -1,13 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const glob = require("glob");
+
+const pages = glob.sync("src/*.html");
 
 module.exports = {
   mode: "development",
   target: "web",
   devtool: "source-map",
   entry: {
-    main: path.resolve(__dirname, "./src/index.js"),
+    index: path.resolve(__dirname, "./src/index.js"),
     post: path.resolve(__dirname, "./src/post.js"),
     posts: path.resolve(__dirname, "./src/posts.js"),
     feedback: path.resolve(__dirname, "./src/feedback.js"),
@@ -19,30 +22,15 @@ module.exports = {
     clean: true,
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: "Index Page",
-      template: path.resolve(__dirname, "./src/index.html"),
-      filename: "index.html",
-      chunks: ["main"],
-    }),
-    new HtmlWebpackPlugin({
-      title: "Post Page",
-      template: path.resolve(__dirname, "./src/post.html"),
-      filename: "post.html",
-      chunks: ["post"],
-    }),
-    new HtmlWebpackPlugin({
-      title: "Posts Page",
-      template: path.resolve(__dirname, "./src/posts.html"),
-      filename: "posts.html",
-      chunks: ["posts"],
-    }),
-    new HtmlWebpackPlugin({
-      title: "Feedback",
-      template: path.resolve(__dirname, "./src/feedback.html"),
-      filename: "feedback.html",
-      chunks: ["feedback"],
-    }),
+    ...pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          title: path.basename(page, path.extname(page)),
+          template: page,
+          filename: path.basename(page),
+          chunks: [path.basename(page, path.extname(page))],
+        })
+    ),
     new CleanWebpackPlugin(),
   ],
   module: {

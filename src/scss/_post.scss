@@ -1,66 +1,16 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 @import "base";
-
-@font-face {
-  font-family: "Fira Sans";
-  src: url(../fonts/FiraSans-Regular.ttf);
-  font-weight: 400, 500, 600, 700, 800;
-  font-style: normal;
-}
-
-body {
-  background: #f1f1f1;
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  justify-content: center;
-  align-items: center;
-  min-height: 100%;
-}
-
-$color_white: #fff;
-$color_prime: #5ad67d;
-$color_grey: #e2e2e2;
-$color_grey_dark: #a2a2a2;
+@import "common";
 
 $oscuro: #283035;
 $azul: #03658c;
 $detaile: #c7cacb;
 $fondo: #dee1e3;
 
-.blog-nav,
-.footer_blog {
-  display: flex;
-  gap: 20px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-basis: 100%;
-  font-family: "Fira Sans", sans-serif;
-}
 
-.blog-card-post {
-  display: flex;
+.blog-card {
   max-width: 1900px;
-  flex-direction: column;
   flex: 1 0 100%;
-  margin: 1rem auto;
-  box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
-  margin-bottom: 1.6%;
-  background: $color_white;
-  line-height: 1.4;
-  font-family: sans-serif;
-  border-radius: 5px;
-  overflow: hidden;
-  z-index: 0;
 
-  a {
-    color: inherit;
-
-    &:hover {
-      color: $color_prime;
-    }
-  }
 
   &:hover {
     .post-photo {
@@ -69,9 +19,7 @@ $fondo: #dee1e3;
   }
 
   .meta {
-    position: relative;
     display: flex;
-    z-index: 0;
     height: auto;
   }
 
@@ -84,64 +32,6 @@ $fondo: #dee1e3;
     background-size: cover;
     background-position: center;
     transition: transform 0.2s;
-  }
-
-  .details,
-  .details ul {
-    margin: auto;
-    padding: 0;
-    list-style: none;
-  }
-
-  .details {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -100%;
-    margin: auto;
-    transition: left 0.2s;
-    background: rgba(#000, 0.6);
-    color: $color_white;
-    padding: 10px;
-    width: 100%;
-    max-width: 100%;
-    font-size: 0.9rem;
-
-    a {
-      text-decoration: dotted underline;
-    }
-
-    ul li {
-      display: inline-block;
-    }
-
-    .author:before {
-      font: var(--fa-font-solid);
-      margin-right: 10px;
-      content: "\f007";
-    }
-
-    .date:before {
-      font: var(--fa-font-solid);
-      margin-right: 10px;
-      content: "\f133";
-    }
-
-    .tags {
-      ul:before {
-        font: var(--fa-font-solid);
-        content: "\f02b";
-        margin-right: 10px;
-      }
-
-      li {
-        margin-right: 2px;
-
-        &:first-child {
-          margin-left: -4px;
-        }
-      }
-    }
   }
 
   .description-post {
@@ -168,31 +58,6 @@ $fondo: #dee1e3;
       text-transform: uppercase;
       color: $color_grey_dark;
       margin-top: 5px;
-    }
-  }
-
-  p {
-    position: relative;
-    margin: 1rem 0 0;
-
-    &:first-of-type {
-      margin-top: 1.25rem;
-
-      &:before {
-        content: "";
-        position: absolute;
-        height: 5px;
-        background: $color_prime;
-        width: 35px;
-        top: -0.75rem;
-        border-radius: 3px;
-      }
-    }
-  }
-
-  &:hover {
-    .details {
-      left: 0%;
     }
   }
 
@@ -226,18 +91,18 @@ ul {
   width: 1280px;
   max-width: 100%;
 
-  h2 {
+  &__title {
     font-size: 36px;
     color: $oscuro;
     font-weight: 400;
   }
 }
 
-.comments-list {
+.comments {
   margin-top: 30px;
   position: relative;
 
-  .comment-main-level:after {
+  &__main-level:after {
     content: "";
     width: 0;
     height: 0;
@@ -281,7 +146,7 @@ ul {
     }
   }
 
-  .comment-avatar {
+  &__avatar {
     width: 65px;
     height: 65px;
     position: relative;
@@ -295,7 +160,7 @@ ul {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 
-  .comment-avatar-person {
+  &__avatar__person {
     width: 65px;
     height: 65px;
     position: relative;
@@ -311,7 +176,7 @@ ul {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 
-  .comment-box {
+  &__box {
     width: 1200px;
     max-width: 100%;
     float: right;
@@ -338,7 +203,7 @@ ul {
       left: -12px;
     }
 
-    .comment-head {
+    &__head {
       background: #fcfcfc;
       padding: 10px 12px;
       border-bottom: 1px solid #e5e5e5;
@@ -359,7 +224,7 @@ ul {
         }
       }
 
-      span {
+      &__time {
         float: left;
         color: #999;
         font-size: 13px;
@@ -368,7 +233,7 @@ ul {
       }
     }
 
-    .comment-name {
+    &__name {
       color: $oscuro;
       font-size: 14px;
       font-weight: 700;
@@ -399,7 +264,7 @@ ul {
       }
     }
 
-    .comment-content {
+    &__content {
       background: #fff;
       padding: 12px;
       font-size: 15px;
@@ -409,7 +274,7 @@ ul {
   }
 }
 
-.reply-list {
+.comments--reply {
   padding-left: 88px;
   clear: both;
   margin-top: 15px;
@@ -430,12 +295,13 @@ ul {
       left: -55px;
     }
 
-    .comment-avatar {
+    .comments__avatar 
+    .comments__avatar__person {
       width: 50px;
       height: 50px;
     }
 
-    .comment-box {
+    .comments__box {
       width: 1100px;
       max-width: 100%;
     }
@@ -448,12 +314,12 @@ ul {
     max-width: 100%;
   }
 
-  .comments-list .comment-box {
+  .comments .comments__box {
     width: 390px;
     max-width: 100%;
   }
 
-  .reply-list .comment-box {
+  .comments--reply .comments__box {
     width: 320px;
     max-width: 100%;
   }

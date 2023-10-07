@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
 @import "base";
+@import "common";
 
 html {
   background: #f1f1f1;
@@ -7,27 +7,6 @@ html {
   height: 100%;
 }
 
-.blog-nav,
-.footer_blog {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  margin: 10px;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  font-family: "Fira Sans", sans-serif;
-  color: #03658c;
-
-  a {
-    color: #03658c;
-    text-decoration: none;
-  }
-
-  @media only screen and (max-width: 580px) {
-    flex-direction: column;
-  }
-}
 
 .page {
   &__form-container {
