@@ -16,9 +16,9 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm ci
-          npm run build-prod
+          npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: prod # The folder the action should deploy.
+          folder: dist # The folder the action should deploy.
