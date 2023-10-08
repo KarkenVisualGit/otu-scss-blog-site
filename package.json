@@ -44,7 +44,6 @@
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jest": "^27.4.2",
     "glob": "^10.3.10",
-    "handlebars-webpack-plugin": "^2.2.1",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.3",
     "husky": "^8.0.3",
@@ -58,7 +57,7 @@
     "postcss-loader": "^7.3.3",
     "postcss-preset-env": "^9.1.4",
     "prettier": "^3.0.3",
-    "puppeteer": "^21.3.6",
+    "puppeteer": "^21.3.8",
     "sass": "^1.68.0",
     "sass-loader": "^13.3.2",
     "sharp": "^0.32.6",
@@ -69,6 +68,6 @@
   },
   "lint-staged": {
     "*.js": "eslint --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,scss,css,md}": "prettier --write"
   }
 }

@@ -32,12 +32,9 @@ html {
 
   &__input {
     color: #b9b8b8;
-
-    font: {
-      family: "Fira Sans", sans-serif;
-      weight: 500;
-      size: 18px;
-    }
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
 
     border-radius: 0;
     line-height: 22px;
@@ -57,36 +54,25 @@ html {
       padding: 13px 13px 13px 54px;
     }
 
-    &--focused {
-      color: #30aed6;
-      border: #30aed6 solid 3px;
+    &-name {
+      background-image: url(../images/user-svgrepo-com.svg);
+      background-size: 30px 30px;
+      background-position: 5% 50%;
+      background-repeat: no-repeat;
     }
 
-    &--name {
-      background: {
-        image: url(../images/user-svgrepo-com.svg);
-        size: 30px 30px;
-        position: 5% 50%;
-        repeat: no-repeat;
-      }
+    &-email {
+      background-image: url(../images/email-1-svgrepo-com.svg);
+      background-size: 30px 30px;
+      background-position: 5% 50%;
+      background-repeat: no-repeat;
     }
 
-    &--email {
-      background: {
-        image: url(../images/email-1-svgrepo-com.svg);
-        size: 30px 30px;
-        position: 5% 50%;
-        repeat: no-repeat;
-      }
-    }
-
-    &--comment {
-      background: {
-        image: url(../images/comment-5-svgrepo-com.svg);
-        size: 30px 30px;
-        position: 5% 50%;
-        repeat: no-repeat;
-      }
+    &-comment {
+      background-image: url(../images/comment-5-svgrepo-com.svg);
+      background-size: 30px 30px;
+      background-position: 5% 50%;
+      background-repeat: no-repeat;
     }
   }
 
@@ -107,12 +93,10 @@ html {
     justify-content: center;
     align-items: center;
 
-    &--blue {
-      font: {
-        family: "Fira Sans", sans-serif;
-        size: 24px;
-        weight: 700;
-      }
+    &-blue {
+      font-family: "Fira Sans", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
 
       width: 100%;
       border: #fbfbfb solid 4px;
@@ -130,7 +114,7 @@ html {
       }
     }
 
-    &--submit:hover {
+    &-submit:hover {
       color: #3498db;
     }
   }
@@ -141,7 +125,7 @@ html {
     background-color: #fbfbfb;
     transition: 0.3s ease;
 
-    .button--submit:hover & {
+    .button-submit:hover & {
       width: 100%;
       background-color: #fbfbfb;
     }
