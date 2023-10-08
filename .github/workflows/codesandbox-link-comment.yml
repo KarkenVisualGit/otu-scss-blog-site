@@ -2,9 +2,9 @@ name: Add codesandbox link
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened]
   pull_request_target:
-    types: [opened, synchronize]
+    types: [opened]
 
 jobs:
   codesandbox-comment:
