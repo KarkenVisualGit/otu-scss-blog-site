@@ -1,8 +1,6 @@
 name: Add codesandbox link
 
 on:
-  push:
-    branches: ["blog-site"]
   pull_request:
     types: [opened]
   pull_request_target:
