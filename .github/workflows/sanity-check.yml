@@ -1,10 +1,17 @@
-name: PR Sanity Check
+name: Sanity Check
 
-on: pull_request
+on: 
+  push:
+    branches: ["blog-site"]
+  pull_request:
+    branches: ["blog-site"]
+permissions:
+  contents: write
 
 jobs:
   lint:
     runs-on: ubuntu-20.04
+    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
