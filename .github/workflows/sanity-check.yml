@@ -1,6 +1,6 @@
 name: Sanity Check
 
-on: 
+on:
   push:
     branches: ["blog-site"]
   pull_request:
