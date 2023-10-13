@@ -1,10 +1,10 @@
 class Carousel {
   constructor() {
     this.init();
-    this.autoPlay();
   }
 
   init() {
+    console.log("Hello");
     this.container = document.querySelector(".carousel");
 
     this.carouselItems = Array.from(
@@ -13,7 +13,6 @@ class Carousel {
     this.selectedItem = document.querySelector(".carousel-item_isSelected");
     this.marker = this.carouselItems.indexOf(this.selectedItem);
 
-    this.bulletNav();
     this.bindEvents();
   }
 
@@ -30,6 +29,16 @@ class Carousel {
       },
       { passive: false }
     );
+  }
+
+  autoPlay() {
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide();
+    }, 5000);
+  }
+
+  stopAutoPlay() {
+    clearInterval(this.autoPlayInterval);
   }
 
   updateMarker(position) {
