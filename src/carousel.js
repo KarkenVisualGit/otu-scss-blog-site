@@ -75,6 +75,21 @@ class Carousel {
     this.decrementSlide();
   }
 
+  bulletNav() {
+    const bulletNav = document.createElement("ul");
+    bulletNav.className = "carousel-bulletNav";
+
+    for (let i = 0; i < this.carouselItems.length; i += 1) {
+      const li = document.createElement("li");
+      li.className = "carousel-bulletNav-control js-carousel-bulletNav-control";
+      const a = document.createElement("a");
+      li.appendChild(a);
+      bulletNav.appendChild(li);
+    }
+
+    this.container.appendChild(bulletNav);
+  }
+
   bulletNavControl(index) {
     this.updateMarker(index);
     this.marker = index;
