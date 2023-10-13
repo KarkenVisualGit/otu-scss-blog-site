@@ -1,6 +1,7 @@
 class Carousel {
   constructor() {
     this.init();
+    this.autoPlay();
   }
 
   init() {
@@ -29,6 +30,14 @@ class Carousel {
       },
       { passive: false }
     );
+
+    this.container.addEventListener("mouseenter", () => {
+      this.stopAutoPlay();
+    });
+
+    this.container.addEventListener("mouseleave", () => {
+      this.autoPlay();
+    });
   }
 
   autoPlay() {
