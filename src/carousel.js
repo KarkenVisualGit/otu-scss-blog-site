@@ -32,6 +32,14 @@ class Carousel {
     );
   }
 
+  updateMarker(position) {
+    this.selectedItem.classList.remove("carousel-item_isSelected");
+    this.selectedItem = this.carouselItems[position];
+    this.selectedItem.classList.add("carousel-item_isSelected");
+    this.carouselItems.forEach((item) => item.classList.add("hidden"));
+    this.selectedItem.classList.remove("hidden");
+  }
+
   incrementSlide() {
     this.marker = (this.marker + 1) % this.carouselItems.length;
   }
