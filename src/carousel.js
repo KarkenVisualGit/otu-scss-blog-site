@@ -7,17 +7,37 @@ class Carousel {
   init() {
     console.log("Hello");
     this.container = document.querySelector(".carousel");
-
+    this.triggerNext = this.container.querySelector(".js-carousel-nav_next");
+    this.triggerPrev = this.container.querySelector(".js-carousel-nav_prev");
     this.carouselItems = Array.from(
       document.querySelectorAll(".carousel-item")
     );
     this.selectedItem = document.querySelector(".carousel-item_isSelected");
     this.marker = this.carouselItems.indexOf(this.selectedItem);
-
+    this.bulletNav();
     this.bindEvents();
   }
 
   bindEvents() {
+    this.triggerNext.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.nextSlide();
+    });
+
+    this.triggerPrev.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.prevSlide();
+    });
+
+    this.container
+      .querySelectorAll(".js-carousel-bulletNav-control")
+      .forEach((bullet, index) => {
+        bullet.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.bulletNavControl(index);
+        });
+      });
+
     this.container.addEventListener(
       "wheel",
       (e) => {
@@ -69,10 +89,12 @@ class Carousel {
 
   nextSlide() {
     this.incrementSlide();
+    this.updateMarker(this.marker);
   }
 
   prevSlide() {
     this.decrementSlide();
+    this.updateMarker(this.marker);
   }
 
   bulletNav() {
