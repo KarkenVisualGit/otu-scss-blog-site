@@ -17,6 +17,38 @@ class Carousel {
     this.bindEvents();
   }
 
+  bindEvents() {
+    this.container.addEventListener(
+      "wheel",
+      (e) => {
+        if (e.deltaY > 0) {
+          this.nextSlide();
+        } else {
+          this.prevSlide();
+        }
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+  }
+
+  incrementSlide() {
+    this.marker = (this.marker + 1) % this.carouselItems.length;
+  }
+
+  decrementSlide() {
+    this.marker =
+      this.marker === 0 ? this.carouselItems.length - 1 : this.marker - 1;
+  }
+
+  nextSlide() {
+    this.incrementSlide();
+  }
+
+  prevSlide() {
+    this.decrementSlide();
+  }
+
   static initCarousel() {
     return new Carousel();
   }
