@@ -14,6 +14,7 @@ class Carousel {
     );
     this.selectedItem = document.querySelector(".carousel-item_isSelected");
     this.marker = this.carouselItems.indexOf(this.selectedItem);
+
     this.bulletNav();
     this.bindEvents();
   }
