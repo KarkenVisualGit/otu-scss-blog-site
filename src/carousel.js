@@ -75,6 +75,11 @@ class Carousel {
     this.decrementSlide();
   }
 
+  bulletNavControl(index) {
+    this.updateMarker(index);
+    this.marker = index;
+  }
+
   static initCarousel() {
     return new Carousel();
   }
