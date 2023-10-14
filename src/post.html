@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post</title>
+    <script
+      src="https://kit.fontawesome.com/4f1626dd76.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="blog-nav">
+        <a href="index.html">Главная</a>
+        <a href="feedback.html">Обратная связь</a>
+        <a href="posts.html">Список записей</a>
+      </nav>
+    </header>
+    <main>
+      <div class="blog-card">
+        <div class="blog-card__meta">
+          <div class="blog-card__photo"></div>
+          <ul class="blog-card__details">
+            <li class="blog-card__details--author"><a href="#">John Doe</a></li>
+            <li class="blog-card__details--date">Oct. 04, 2023</li>
+            <li class="blog-card__details--tags">
+              <ul>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Code</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="blog-card__description">
+          <h1 class="blog-card__description--title">Learning to Code</h1>
+          <h2 class="blog-card__description--subtitle">
+            Opening a door to the future
+          </h2>
+          <p class="blog-card__description--text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+            dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+            Neque ad aliquam facilis numquam. Veritatis, sit.
+          </p>
+          <p class="blog-card__description--text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+            dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+            Neque ad aliquam facilis numquam. Veritatis, sit.
+          </p>
+          <p class="blog-card__description--text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum
+            dolorum architecto obcaecati enim dicta praesentium, quam nobis!
+            Neque ad aliquam facilis numquam. Veritatis, sit.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <div class="comments-container">
+      <h2 class="comments-container__title">Comments</h2>
+
+      <ul class="comments">
+        <li>
+          <div class="comments__main-level">
+            <div class="comments__avatar"></div>
+
+            <div class="comments__box">
+              <div class="comments__box__head">
+                <h6 class="comments__box__name--author">John Doe</h6>
+                <span class="comments__box__head__time">20 minutes ago</span>
+                <div class="comments__box__head__icons">
+                  <i class="fa fa-reply"></i>
+                  <i class="fa fa-heart"></i>
+                </div>
+              </div>
+              <div class="comments__box__content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
+                omnis animi et iure laudantium vitae, praesentium optio,
+                sapiente distinctio illo?
+              </div>
+            </div>
+          </div>
+
+          <ul class="comments comments--reply">
+            <li>
+              <div class="comments__avatar__person"></div>
+
+              <div class="comments__box">
+                <div class="comments__box__head">
+                  <h6 class="comments__box__name">Nancy Clark</h6>
+                  <span class="comments__box__head__time">10 minutes ago</span>
+                  <div class="comments__box__head__icons">
+                    <i class="fa fa-reply"></i>
+                    <i class="fa fa-heart"></i>
+                  </div>
+                </div>
+                <div class="comments__box__content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Velit omnis animi et iure laudantium vitae, praesentium optio,
+                  sapiente distinctio illo?
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="comments__avatar"></div>
+
+              <div class="comments__box">
+                <div class="comments__box__head">
+                  <h6 class="comments__box__name--author">John Doe</h6>
+                  <span class="comments__box__head__time">10 minutes ago</span>
+                  <div class="comments__box__head__icons">
+                    <i class="fa fa-reply"></i>
+                    <i class="fa fa-heart"></i>
+                  </div>
+                </div>
+                <div class="comments__box__content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Velit omnis animi et iure laudantium vitae, praesentium optio,
+                  sapiente distinctio illo?
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="comment-main-level">
+            <div class="comments__avatar__person"></div>
+
+            <div class="comments__box">
+              <div class="comments__box__head">
+                <h6 class="comments__box__name">Nancy Clark</h6>
+                <span class="comments__box__head__time">10 minutes ago</span>
+                <div class="comments__box__head__icons">
+                  <i class="fa fa-reply"></i>
+                  <i class="fa fa-heart"></i>
+                </div>
+              </div>
+              <div class="comments__box__content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit
+                omnis animi et iure laudantium vitae, praesentium optio,
+                sapiente distinctio illo?
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <footer class="footer_blog">
+      <p>Сайт-блог © 2023</p>
+    </footer>
+  </body>
+</html>

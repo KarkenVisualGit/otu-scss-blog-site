@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback</title>
+    <script
+      src="https://kit.fontawesome.com/4f1626dd76.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="blog-nav">
+        <a href="index.html">Главная</a>
+        <a href="feedback.html">Обратная связь</a>
+        <a href="posts.html">Список записей</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <div class="page__form-container">
+        <div class="page__form">
+          <form class="form">
+            <p class="page__input page__input-name">
+              <input
+                name="name"
+                type="text"
+                class="validate[required,custom[onlyLetter],length[0,100]] page__input"
+                placeholder="Name"
+              />
+            </p>
+
+            <p class="page__input page__input-email">
+              <input
+                name="email"
+                type="text"
+                class="validate[required,custom[email]] page__input"
+                placeholder="Email"
+              />
+            </p>
+
+            <p class="page__input page__input-comment">
+              <textarea
+                name="text"
+                class="validate[required,length[6,300]] page__textarea"
+                placeholder="Comment"
+              ></textarea>
+            </p>
+
+            <div class="page__button page__button-submit">
+              <input
+                type="submit"
+                value="SEND FEEDBACK"
+                class="page__button page__button-blue"
+              />
+              <div class="page__animation"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer_blog">
+      <p>Сайт-блог © 2023</p>
+    </footer>
+  </body>
+</html>

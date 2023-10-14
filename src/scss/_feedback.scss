@@ -1,0 +1,133 @@
+@import "base";
+@import "common";
+
+html {
+  background: #f1f1f1;
+  background-size: cover;
+  height: 100%;
+}
+
+.page {
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  &__form {
+    background-color: #d2d0d0;
+    padding: 35px 35px 50px;
+    width: 450px;
+    border-radius: 7px;
+
+    @media only screen and (max-width: 580px) {
+      width: 88%;
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+  }
+
+  &__input {
+    color: #b9b8b8;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+
+    border-radius: 0;
+    line-height: 22px;
+    background-color: #fbfbfb;
+    padding: 13px 13px 13px 54px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 3px solid rgba(0, 0, 0, 0);
+
+    &:focus {
+      background: #fff;
+      box-shadow: 0;
+      border: 3px solid #3498db;
+      color: #3498db;
+      outline: none;
+      padding: 13px 13px 13px 54px;
+    }
+
+    &-name {
+      background-image: url(../images/user-svgrepo-com.svg);
+      background-size: 30px 30px;
+      background-position: 5% 50%;
+      background-repeat: no-repeat;
+    }
+
+    &-email {
+      background-image: url(../images/email-1-svgrepo-com.svg);
+      background-size: 30px 30px;
+      background-position: 5% 50%;
+      background-repeat: no-repeat;
+    }
+
+    &-comment {
+      background-image: url(../images/comment-5-svgrepo-com.svg);
+      background-size: 30px 30px;
+      background-position: 5% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
+
+    &:hover,
+    &:focus {
+      background-color: #fbfbfb;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-blue {
+      font-family: "Fira Sans", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+
+      width: 100%;
+      border: #fbfbfb solid 4px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: #fbfbfb;
+      padding-top: 22px;
+      padding-bottom: 22px;
+      transition: all 0.3s;
+      margin-top: -4px;
+
+      &:hover {
+        background-color: #fbfbfb;
+        color: #0493bd;
+      }
+    }
+
+    &-submit:hover {
+      color: #3498db;
+    }
+  }
+
+  &__animation {
+    width: 0px;
+    height: 74px;
+    background-color: #fbfbfb;
+    transition: 0.3s ease;
+
+    .button-submit:hover & {
+      width: 100%;
+      background-color: #fbfbfb;
+    }
+  }
+}

@@ -1,0 +1,311 @@
+@import "base";
+@import "common";
+
+$oscuro: #283035;
+$azul: #03658c;
+$detaile: #c7cacb;
+$fondo: #dee1e3;
+
+.blog-card {
+  max-width: 1900px;
+  flex: 1 0 100%;
+
+  &:hover {
+    .blog-card__photo {
+      transform: scale(1.3);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    height: auto;
+  }
+
+  &__photo {
+    display: flex;
+    position: unset;
+    width: 100%;
+    min-height: 100%;
+    height: 500px;
+  }
+
+  &__description {
+    padding: 1rem;
+    text-align: justify;
+    background: $color_white;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 640px) {
+    flex-direction: column;
+    max-width: 100%;
+
+    .blog-card__meta {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .blog-card__description {
+      max-width: 100%;
+    }
+  }
+}
+
+a {
+  color: $azul;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.comments-container {
+  margin: 60px auto 15px;
+  width: 1280px;
+  max-width: 100%;
+
+  &__title {
+    font-size: 36px;
+    color: $oscuro;
+    font-weight: 400;
+  }
+}
+
+.comments {
+  margin-top: 30px;
+  position: relative;
+
+  &__main-level:after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+  }
+
+  &:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: $detaile;
+    position: absolute;
+    left: 32px;
+    top: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    background: $detaile;
+    bottom: 0;
+    left: 27px;
+    width: 7px;
+    height: 7px;
+    border: 3px solid $fondo;
+    border-radius: 50%;
+  }
+
+  li {
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+      height: 0;
+      width: 0;
+    }
+  }
+
+  &__avatar {
+    width: 65px;
+    height: 65px;
+    position: relative;
+    background-image: url(../images/aiony-haust.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 99;
+    float: left;
+    border: 3px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  &__avatar__person {
+    width: 65px;
+    height: 65px;
+    position: relative;
+    background-image: url(../images/christopher-campbell.jpg);
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    z-index: 99;
+    float: left;
+    border: 3px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  &__box {
+    width: 1200px;
+    max-width: 100%;
+    float: right;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+
+    &:before,
+    &:after {
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      display: block;
+      border-width: 10px 12px 10px 0;
+      border-style: solid;
+      border-color: transparent #fcfcfc;
+      top: 8px;
+      left: -11px;
+    }
+
+    &:before {
+      border-width: 11px 13px 11px 0;
+      border-color: transparent rgba(0, 0, 0, 0.05);
+      left: -12px;
+    }
+
+    &__head {
+      background: #fcfcfc;
+      padding: 10px 12px;
+      border-bottom: 1px solid #e5e5e5;
+      overflow: hidden;
+      border-radius: 4px 4px 0 0;
+      display: flex;
+      align-items: center;
+
+      &__icons {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+
+        i {
+          margin-left: 14px;
+          position: relative;
+          top: 2px;
+          color: #a6a6a6;
+          cursor: pointer;
+          transition: color 0.3s ease;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:hover {
+            color: $azul;
+          }
+        }
+      }
+
+      &__time {
+        color: #999;
+        font-size: 13px;
+        position: relative;
+        top: 1px;
+      }
+    }
+
+    &__name {
+      color: $oscuro;
+      font-size: 14px;
+      font-weight: 700;
+      float: left;
+      margin-right: 10px;
+
+      a {
+        color: $oscuro;
+      }
+
+      &--author {
+        color: $azul;
+
+        a {
+          color: $azul;
+        }
+
+        &:after {
+          content: "author";
+          background: $azul;
+          color: #fff;
+          font-size: 12px;
+          padding: 3px 5px;
+          font-weight: 700;
+          margin: 10px;
+          border-radius: 3px;
+        }
+      }
+    }
+
+    &__content {
+      background: #fff;
+      padding: 12px;
+      font-size: 15px;
+      color: #595959;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+}
+
+.comments--reply {
+  padding-left: 88px;
+  clear: both;
+  margin-top: 15px;
+
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  li {
+    &:before {
+      content: "";
+      width: 60px;
+      height: 2px;
+      background: $detaile;
+      position: absolute;
+      top: 25px;
+      left: -55px;
+    }
+
+    .comments__avatar .comments__avatar__person {
+      width: 50px;
+      height: 50px;
+    }
+
+    .comments__box {
+      width: 1100px;
+      max-width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 766px) {
+  .comments-container {
+    width: 480px;
+    max-width: 100%;
+  }
+
+  .comments .comments__box {
+    width: 390px;
+    max-width: 100%;
+  }
+
+  .comments--reply .comments__box {
+    width: 320px;
+    max-width: 100%;
+  }
+}

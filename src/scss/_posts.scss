@@ -1,0 +1,33 @@
+@import "base";
+@import "common";
+
+.blog-card {
+  &__photo1 {
+    position: absolute;
+    background-image: url(../images/image-2.jpg);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s;
+  }
+
+  @media (min-width: 640px) {
+    &.alt {
+      flex-direction: row-reverse;
+
+      .blog-card__description {
+        &:before {
+          left: inherit;
+          right: -10px;
+        }
+      }
+
+      .blog-card__details {
+        padding-left: 25px;
+      }
+    }
+  }
+}

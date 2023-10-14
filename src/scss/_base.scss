@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url(../fonts/FiraSans-Regular.woff2);
+  font-weight: 400, 500, 600, 700, 800;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

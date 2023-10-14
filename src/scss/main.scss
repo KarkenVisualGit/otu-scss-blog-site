@@ -1,0 +1,43 @@
+@import "base";
+@import "common";
+
+.news {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: "Fira Sans", sans-serif;
+
+  &__item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .news__date {
+      display: flex;
+      flex: 0 1 30%;
+      background-color: #3c707e;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      justify-content: center;
+      align-self: center;
+      align-items: center;
+      padding: 4px 8px;
+    }
+
+    .news__text {
+      font-size: 12px;
+      color: #656565;
+      padding-left: 8px;
+
+      .news__link {
+        font-size: 14px;
+        font-weight: bold;
+        color: #000000;
+        text-decoration: none;
+      }
+    }
+  }
+}
