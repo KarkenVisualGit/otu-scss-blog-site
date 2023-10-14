@@ -11,7 +11,7 @@
     "build-dev": "webpack --watch",
     "start-dev": "webpack serve",
     "start": "webpack serve --mode development -c webpack.config.js",
-    "test": "jest --updateSnapshot",
+    "test": "jest",
     "lint": "prettier --check . && eslint .",
     "lint:fix": "prettier --write . && eslint . --fix",
     "prepare": "husky install"

@@ -1,10 +1,14 @@
-export default class Carousel {
-  constructor() {
+import CarouselLogic from "./CarouselLogic.js";
+
+export default class CarouselUI {
+  constructor(logic) {
+    this.logic = logic;
     this.init();
     this.autoPlay();
   }
 
   init() {
+    console.log("Init!");
     this.container = document.querySelector(".carousel");
     this.triggerNext = this.container.querySelector(".js-carousel-nav_next");
     this.triggerPrev = this.container.querySelector(".js-carousel-nav_prev");
@@ -70,7 +74,8 @@ export default class Carousel {
     clearInterval(this.autoPlayInterval);
   }
 
-  updateMarker(position) {
+  updateMarker() {
+    const position = this.logic.getMarker();
     this.selectedItem.classList.remove("carousel-item_isSelected");
     this.selectedItem = this.carouselItems[position];
     this.selectedItem.classList.add("carousel-item_isSelected");
@@ -88,13 +93,13 @@ export default class Carousel {
   }
 
   nextSlide() {
-    this.incrementSlide();
-    this.updateMarker(this.marker);
+    this.logic.incrementSlide();
+    this.updateMarker();
   }
 
   prevSlide() {
-    this.decrementSlide();
-    this.updateMarker(this.marker);
+    this.logic.decrementSlide();
+    this.updateMarker();
   }
 
   bulletNav() {
@@ -113,13 +118,14 @@ export default class Carousel {
   }
 
   bulletNavControl(index) {
-    this.updateMarker(index);
-    this.marker = index;
-  }
-
-  static initCarousel() {
-    return new Carousel();
+    this.logic.setMarker(index);
+    this.updateMarker();
   }
 }
 
-document.addEventListener("DOMContentLoaded", Carousel.initCarousel);
+document.addEventListener("DOMContentLoaded", () => {
+  const logic = new CarouselLogic(
+    document.querySelectorAll(".carousel-item").length
+  );
+  return new CarouselUI(logic);
+});
