@@ -1,10 +1,6 @@
 name: Codecov
 
-on:
-  push:
-    branches: ["blog-site-carousel"]
-  pull_request:
-    branches: ["blog-site-carousel"]
+on: [push, pull_request]
 
 jobs:
   codecov:
