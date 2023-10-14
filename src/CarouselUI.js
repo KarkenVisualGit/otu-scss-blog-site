@@ -8,7 +8,6 @@ export default class CarouselUI {
   }
 
   init() {
-    console.log("Init!");
     this.container = document.querySelector(".carousel");
     this.triggerNext = this.container.querySelector(".js-carousel-nav_next");
     this.triggerPrev = this.container.querySelector(".js-carousel-nav_prev");
