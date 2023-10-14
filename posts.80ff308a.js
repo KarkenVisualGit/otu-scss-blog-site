@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/_post.scss":
-/*!**********************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/_post.scss ***!
-  \**********************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/_posts.scss":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/_posts.scss ***!
+  \***********************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -24,14 +24,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../fonts/FiraSans-Regular.woff2 */ "./src/fonts/FiraSans-Regular.woff2"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../images/image-1.jpg */ "./src/images/image-1.jpg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../images/aiony-haust.jpg */ "./src/images/aiony-haust.jpg"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ../images/christopher-campbell.jpg */ "./src/images/christopher-campbell.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
-var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
-var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_3___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
   font-family: "Fira Sans";
@@ -56,6 +52,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-family: "Fira Sans", sans-serif;
   font-size: 1.5rem;
   color: #03658c;
@@ -253,269 +250,42 @@ body {
   }
 }
 
-.blog-card {
-  max-width: 1900px;
-  flex: 1 0 100%;
-}
-.blog-card:hover .blog-card__photo {
-  transform: scale(1.3);
-}
-.blog-card__meta {
+.news {
   display: flex;
-  height: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: "Fira Sans", sans-serif;
 }
-.blog-card__photo {
+.news__item {
   display: flex;
-  position: unset;
-  width: 100%;
-  min-height: 100%;
-  height: 500px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-bottom: 20px;
 }
-.blog-card__description {
-  padding: 1rem;
-  text-align: justify;
-  background: #fff;
-  position: relative;
-  z-index: 1;
-}
-@media (min-width: 640px) {
-  .blog-card {
-    flex-direction: column;
-    max-width: 100%;
-  }
-  .blog-card .blog-card__meta {
-    max-width: 100%;
-    height: auto;
-  }
-  .blog-card .blog-card__description {
-    max-width: 100%;
-  }
-}
-
-a {
-  color: #03658c;
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-ul {
-  list-style-type: none;
-}
-
-.comments-container {
-  margin: 60px auto 15px;
-  width: 1280px;
-  max-width: 100%;
-}
-.comments-container__title {
-  font-size: 36px;
-  color: #283035;
-  font-weight: 400;
-}
-
-.comments {
-  margin-top: 30px;
-  position: relative;
-}
-.comments__main-level:after {
-  content: "";
-  width: 0;
-  height: 0;
-  display: block;
-  clear: both;
-}
-.comments:before {
-  content: "";
-  width: 2px;
-  height: 100%;
-  background: #c7cacb;
-  position: absolute;
-  left: 32px;
-  top: 0;
-}
-.comments:after {
-  content: "";
-  position: absolute;
-  background: #c7cacb;
-  bottom: 0;
-  left: 27px;
-  width: 7px;
-  height: 7px;
-  border: 3px solid #dee1e3;
-  border-radius: 50%;
-}
-.comments li {
-  margin-bottom: 15px;
-  display: block;
-  position: relative;
-}
-.comments li:after {
-  content: "";
-  display: block;
-  clear: both;
-  height: 0;
-  width: 0;
-}
-.comments__avatar {
-  width: 65px;
-  height: 65px;
-  position: relative;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_2___});
-  background-size: cover;
-  background-position: center;
-  z-index: 99;
-  float: left;
-  border: 3px solid #fff;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-.comments__avatar__person {
-  width: 65px;
-  height: 65px;
-  position: relative;
-  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_3___});
-  background-size: cover;
-  background-position: center;
-  background-size: cover;
-  background-position: center;
-  z-index: 99;
-  float: left;
-  border: 3px solid #fff;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-.comments__box {
-  width: 1200px;
-  max-width: 100%;
-  float: right;
-  position: relative;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-}
-.comments__box:before, .comments__box:after {
-  content: "";
-  height: 0;
-  width: 0;
-  position: absolute;
-  display: block;
-  border-width: 10px 12px 10px 0;
-  border-style: solid;
-  border-color: transparent #fcfcfc;
-  top: 8px;
-  left: -11px;
-}
-.comments__box:before {
-  border-width: 11px 13px 11px 0;
-  border-color: transparent rgba(0, 0, 0, 0.05);
-  left: -12px;
-}
-.comments__box__head {
-  background: #fcfcfc;
-  padding: 10px 12px;
-  border-bottom: 1px solid #e5e5e5;
-  overflow: hidden;
-  border-radius: 4px 4px 0 0;
+.news__item .news__date {
   display: flex;
-  align-items: center;
-}
-.comments__box__head__icons {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-.comments__box__head__icons i {
-  margin-left: 14px;
-  position: relative;
-  top: 2px;
-  color: #a6a6a6;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-.comments__box__head__icons i:first-child {
-  margin-left: 0;
-}
-.comments__box__head__icons i:hover {
-  color: #03658c;
-}
-.comments__box__head__time {
-  color: #999;
-  font-size: 13px;
-  position: relative;
-  top: 1px;
-}
-.comments__box__name {
-  color: #283035;
-  font-size: 14px;
-  font-weight: 700;
-  float: left;
-  margin-right: 10px;
-}
-.comments__box__name a {
-  color: #283035;
-}
-.comments__box__name--author {
-  color: #03658c;
-}
-.comments__box__name--author a {
-  color: #03658c;
-}
-.comments__box__name--author:after {
-  content: "author";
-  background: #03658c;
+  flex: 0 1 30%;
+  background-color: #3c707e;
   color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  padding: 4px 8px;
+}
+.news__item .news__text {
   font-size: 12px;
-  padding: 3px 5px;
-  font-weight: 700;
-  margin: 10px;
-  border-radius: 3px;
+  color: #656565;
+  padding-left: 8px;
 }
-.comments__box__content {
-  background: #fff;
-  padding: 12px;
-  font-size: 15px;
-  color: #595959;
-  border-radius: 0 0 4px 4px;
-}
-
-.comments--reply {
-  padding-left: 88px;
-  clear: both;
-  margin-top: 15px;
-}
-.comments--reply:before, .comments--reply:after {
-  display: none;
-}
-.comments--reply li:before {
-  content: "";
-  width: 60px;
-  height: 2px;
-  background: #c7cacb;
-  position: absolute;
-  top: 25px;
-  left: -55px;
-}
-.comments--reply li .comments__avatar .comments__avatar__person {
-  width: 50px;
-  height: 50px;
-}
-.comments--reply li .comments__box {
-  width: 1100px;
-  max-width: 100%;
-}
-
-@media only screen and (max-width: 766px) {
-  .comments-container {
-    width: 480px;
-    max-width: 100%;
-  }
-  .comments .comments__box {
-    width: 390px;
-    max-width: 100%;
-  }
-  .comments--reply .comments__box {
-    width: 320px;
-    max-width: 100%;
-  }
-}`, "",{"version":3,"sources":["webpack://./src/scss/_base.scss","webpack://./src/scss/_post.scss","webpack://./src/scss/_common.scss"],"names":[],"mappings":"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","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800\");\n\n@font-face {\n  font-family: \"Fira Sans\";\n  src: url(../fonts/FiraSans-Regular.woff2);\n  font-weight: 400, 500, 600, 700, 800;\n  font-style: normal;\n}\n\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n","@import \"base\";\n@import \"common\";\n\n$oscuro: #283035;\n$azul: #03658c;\n$detaile: #c7cacb;\n$fondo: #dee1e3;\n\n.blog-card {\n  max-width: 1900px;\n  flex: 1 0 100%;\n\n  &:hover {\n    .blog-card__photo {\n      transform: scale(1.3);\n    }\n  }\n\n  &__meta {\n    display: flex;\n    height: auto;\n  }\n\n  &__photo {\n    display: flex;\n    position: unset;\n    width: 100%;\n    min-height: 100%;\n    height: 500px;\n  }\n\n  &__description {\n    padding: 1rem;\n    text-align: justify;\n    background: $color_white;\n    position: relative;\n    z-index: 1;\n  }\n\n  @media (min-width: 640px) {\n    flex-direction: column;\n    max-width: 100%;\n\n    .blog-card__meta {\n      max-width: 100%;\n      height: auto;\n    }\n\n    .blog-card__description {\n      max-width: 100%;\n    }\n  }\n}\n\na {\n  color: $azul;\n  text-decoration: none;\n  margin-top: 10px;\n}\n\nul {\n  list-style-type: none;\n}\n\n.comments-container {\n  margin: 60px auto 15px;\n  width: 1280px;\n  max-width: 100%;\n\n  &__title {\n    font-size: 36px;\n    color: $oscuro;\n    font-weight: 400;\n  }\n}\n\n.comments {\n  margin-top: 30px;\n  position: relative;\n\n  &__main-level:after {\n    content: \"\";\n    width: 0;\n    height: 0;\n    display: block;\n    clear: both;\n  }\n\n  &:before {\n    content: \"\";\n    width: 2px;\n    height: 100%;\n    background: $detaile;\n    position: absolute;\n    left: 32px;\n    top: 0;\n  }\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    background: $detaile;\n    bottom: 0;\n    left: 27px;\n    width: 7px;\n    height: 7px;\n    border: 3px solid $fondo;\n    border-radius: 50%;\n  }\n\n  li {\n    margin-bottom: 15px;\n    display: block;\n    position: relative;\n\n    &:after {\n      content: \"\";\n      display: block;\n      clear: both;\n      height: 0;\n      width: 0;\n    }\n  }\n\n  &__avatar {\n    width: 65px;\n    height: 65px;\n    position: relative;\n    background-image: url(../images/aiony-haust.jpg);\n    background-size: cover;\n    background-position: center;\n    z-index: 99;\n    float: left;\n    border: 3px solid #fff;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);\n  }\n\n  &__avatar__person {\n    width: 65px;\n    height: 65px;\n    position: relative;\n    background-image: url(../images/christopher-campbell.jpg);\n    background-size: cover;\n    background-position: center;\n    background-size: cover;\n    background-position: center;\n    z-index: 99;\n    float: left;\n    border: 3px solid #fff;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);\n  }\n\n  &__box {\n    width: 1200px;\n    max-width: 100%;\n    float: right;\n    position: relative;\n    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);\n\n    &:before,\n    &:after {\n      content: \"\";\n      height: 0;\n      width: 0;\n      position: absolute;\n      display: block;\n      border-width: 10px 12px 10px 0;\n      border-style: solid;\n      border-color: transparent #fcfcfc;\n      top: 8px;\n      left: -11px;\n    }\n\n    &:before {\n      border-width: 11px 13px 11px 0;\n      border-color: transparent rgba(0, 0, 0, 0.05);\n      left: -12px;\n    }\n\n    &__head {\n      background: #fcfcfc;\n      padding: 10px 12px;\n      border-bottom: 1px solid #e5e5e5;\n      overflow: hidden;\n      border-radius: 4px 4px 0 0;\n      display: flex;\n      align-items: center;\n\n      &__icons {\n        margin-left: auto;\n        display: flex;\n        align-items: center;\n\n        i {\n          margin-left: 14px;\n          position: relative;\n          top: 2px;\n          color: #a6a6a6;\n          cursor: pointer;\n          transition: color 0.3s ease;\n\n          &:first-child {\n            margin-left: 0;\n          }\n\n          &:hover {\n            color: $azul;\n          }\n        }\n      }\n\n      &__time {\n        color: #999;\n        font-size: 13px;\n        position: relative;\n        top: 1px;\n      }\n    }\n\n    &__name {\n      color: $oscuro;\n      font-size: 14px;\n      font-weight: 700;\n      float: left;\n      margin-right: 10px;\n\n      a {\n        color: $oscuro;\n      }\n\n      &--author {\n        color: $azul;\n\n        a {\n          color: $azul;\n        }\n\n        &:after {\n          content: \"author\";\n          background: $azul;\n          color: #fff;\n          font-size: 12px;\n          padding: 3px 5px;\n          font-weight: 700;\n          margin: 10px;\n          border-radius: 3px;\n        }\n      }\n    }\n\n    &__content {\n      background: #fff;\n      padding: 12px;\n      font-size: 15px;\n      color: #595959;\n      border-radius: 0 0 4px 4px;\n    }\n  }\n}\n\n.comments--reply {\n  padding-left: 88px;\n  clear: both;\n  margin-top: 15px;\n\n  &:before,\n  &:after {\n    display: none;\n  }\n\n  li {\n    &:before {\n      content: \"\";\n      width: 60px;\n      height: 2px;\n      background: $detaile;\n      position: absolute;\n      top: 25px;\n      left: -55px;\n    }\n\n    .comments__avatar .comments__avatar__person {\n      width: 50px;\n      height: 50px;\n    }\n\n    .comments__box {\n      width: 1100px;\n      max-width: 100%;\n    }\n  }\n}\n\n@media only screen and (max-width: 766px) {\n  .comments-container {\n    width: 480px;\n    max-width: 100%;\n  }\n\n  .comments .comments__box {\n    width: 390px;\n    max-width: 100%;\n  }\n\n  .comments--reply .comments__box {\n    width: 320px;\n    max-width: 100%;\n  }\n}\n",".blog-nav,\n.footer_blog {\n  display: flex;\n  flex-direction: row;\n  gap: 20px;\n  margin: 10px;\n  flex-wrap: nowrap;\n  align-items: center;\n  justify-content: center;\n  font-family: \"Fira Sans\", sans-serif;\n  font-size: 1.5rem;\n  color: #03658c;\n\n  a {\n    color: #03658c;\n    text-decoration: none;\n  }\n\n  @media only screen and (max-width: 580px) {\n    flex-direction: column;\n  }\n}\n\nbody {\n  background: #f1f1f1;\n  display: flex;\n  flex-direction: column;\n  font-size: 1rem;\n  align-items: center;\n  min-height: 100%;\n}\n\n$color_white: #fff;\n$color_prime: #5ad67d;\n$color_grey: #e2e2e2;\n$color_grey_dark: #a2a2a2;\n\n.blog-card {\n  display: flex;\n  flex-direction: column;\n  margin: 1rem auto;\n  box-shadow: 0 3px 7px -1px rgba(#000, 0.1);\n  margin-bottom: 1.6%;\n  background: $color_white;\n  line-height: 1.4;\n  font-family: sans-serif;\n  border-radius: 5px;\n  overflow: hidden;\n  z-index: 0;\n\n  a {\n    color: inherit;\n\n    &:hover {\n      color: $color_prime;\n    }\n  }\n\n  &:hover {\n    .blog-card__photo {\n      transform: scale(1.3);\n    }\n\n    .blog-card__photo1 {\n      transform: scale(1.3);\n    }\n  }\n\n  &__meta {\n    position: relative;\n    z-index: 0;\n    height: 200px;\n  }\n\n  &__photo {\n    position: absolute;\n    background-image: url(../images/image-1.jpg);\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    background-size: cover;\n    background-position: center;\n    transition: transform 0.2s;\n  }\n\n  &__details,\n  &__details ul {\n    margin: auto;\n    padding: 0;\n    list-style: none;\n  }\n\n  &__details {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: -100%;\n    margin: auto;\n    transition: left 0.2s;\n    background: rgba(#000, 0.6);\n    color: $color_white;\n    padding: 10px;\n    width: 100%;\n    font-size: 0.9rem;\n\n    a {\n      text-decoration: dotted underline;\n    }\n\n    ul li {\n      display: inline-block;\n    }\n\n    &--author:before {\n      font: var(--fa-font-solid);\n      margin-right: 10px;\n      content: \"\\f007\";\n    }\n\n    &--date:before {\n      font: var(--fa-font-solid);\n      margin-right: 10px;\n      content: \"\\f133\";\n    }\n\n    &--tags {\n      ul:before {\n        font: var(--fa-font-solid);\n        content: \"\\f02b\";\n        margin-right: 10px;\n      }\n\n      li {\n        margin-right: 2px;\n\n        &:first-child {\n          margin-left: -4px;\n        }\n      }\n    }\n  }\n\n  &__description {\n    padding: 1rem;\n    background: $color_white;\n    position: relative;\n    z-index: 1;\n\n    h1,\n    h2 {\n      font-family: \"Fira Sans\", sans-serif;\n    }\n\n    &--title {\n      line-height: 1;\n      margin: 0;\n      font-size: 1.7rem;\n    }\n\n    &--subtitle {\n      font-size: 1rem;\n      font-weight: 300;\n      text-transform: uppercase;\n      color: $color_grey_dark;\n      margin-top: 5px;\n    }\n\n    &--read-more {\n      text-align: right;\n\n      a {\n        color: $color_prime;\n        display: inline-block;\n        position: relative;\n\n        &:after {\n          content: \"\\f061\";\n          font-weight: 900;\n          font: var(--fa-font-solid);\n          margin-left: -10px;\n          opacity: 0;\n          vertical-align: middle;\n          transition:\n            margin 0.3s,\n            opacity 0.3s;\n        }\n\n        &:hover:after {\n          margin-left: 5px;\n          opacity: 1;\n        }\n      }\n    }\n  }\n\n  p {\n    position: relative;\n    margin: 1rem 0 0;\n\n    &:first-of-type {\n      margin-top: 1.25rem;\n\n      &:before {\n        content: \"\";\n        position: absolute;\n        height: 5px;\n        background: $color_prime;\n        width: 35px;\n        top: -0.75rem;\n        border-radius: 3px;\n      }\n    }\n  }\n\n  &:hover {\n    .blog-card__details {\n      left: 0%;\n    }\n  }\n\n  @media (min-width: 640px) {\n    flex-direction: row;\n    max-width: 700px;\n\n    .blog-card__meta {\n      flex-basis: 40%;\n      height: auto;\n    }\n\n    .blog-card__description {\n      flex-basis: 60%;\n\n      &:before {\n        content: \"\";\n        background: #fff;\n        width: 30px;\n        position: absolute;\n        left: -10px;\n        top: 0;\n        bottom: 0;\n        z-index: -1;\n      }\n    }\n  }\n}\n"],"sourceRoot":""}]);
+.news__item .news__text .news__link {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+}`, "",{"version":3,"sources":["webpack://./src/scss/_base.scss","webpack://./src/scss/_posts.scss","webpack://./src/scss/_common.scss"],"names":[],"mappings":"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","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800\");\n\n@font-face {\n  font-family: \"Fira Sans\";\n  src: url(../fonts/FiraSans-Regular.woff2);\n  font-weight: 400, 500, 600, 700, 800;\n  font-style: normal;\n}\n\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n","@import \"base\";\n@import \"common\";\n\n.news {\n  display: flex;\n  max-width: 1200px;\n  margin: 0 auto;\n  flex-direction: column;\n  font-family: \"Fira Sans\", sans-serif;\n\n  &__item {\n    display: flex;\n    flex-wrap: nowrap;\n    justify-content: center;\n    margin-bottom: 20px;\n\n    .news__date {\n      display: flex;\n      flex: 0 1 30%;\n      background-color: #3c707e;\n      color: #fff;\n      font-size: 18px;\n      font-weight: bold;\n      justify-content: center;\n      align-self: center;\n      align-items: center;\n      padding: 4px 8px;\n    }\n\n    .news__text {\n      font-size: 12px;\n      color: #656565;\n      padding-left: 8px;\n\n      .news__link {\n        font-size: 14px;\n        font-weight: bold;\n        color: #000000;\n        text-decoration: none;\n      }\n    }\n  }\n}\n",".blog-nav,\n.footer_blog {\n  display: flex;\n  flex-direction: row;\n  gap: 20px;\n  margin: 10px;\n  flex-wrap: nowrap;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n  font-family: \"Fira Sans\", sans-serif;\n  font-size: 1.5rem;\n  color: #03658c;\n\n  a {\n    color: #03658c;\n    text-decoration: none;\n  }\n\n  @media only screen and (max-width: 580px) {\n    flex-direction: column;\n  }\n}\n\nbody {\n  background: #f1f1f1;\n  display: flex;\n  flex-direction: column;\n  font-size: 1rem;\n  align-items: center;\n  min-height: 100%;\n}\n\n$color_white: #fff;\n$color_prime: #5ad67d;\n$color_grey: #e2e2e2;\n$color_grey_dark: #a2a2a2;\n\n.blog-card {\n  display: flex;\n  flex-direction: column;\n  margin: 1rem auto;\n  box-shadow: 0 3px 7px -1px rgba(#000, 0.1);\n  margin-bottom: 1.6%;\n  background: $color_white;\n  line-height: 1.4;\n  font-family: sans-serif;\n  border-radius: 5px;\n  overflow: hidden;\n  z-index: 0;\n\n  a {\n    color: inherit;\n\n    &:hover {\n      color: $color_prime;\n    }\n  }\n\n  &:hover {\n    .blog-card__photo {\n      transform: scale(1.3);\n    }\n\n    .blog-card__photo1 {\n      transform: scale(1.3);\n    }\n  }\n\n  &__meta {\n    position: relative;\n    z-index: 0;\n    height: 200px;\n  }\n\n  &__photo {\n    position: absolute;\n    background-image: url(../images/image-1.jpg);\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    background-size: cover;\n    background-position: center;\n    transition: transform 0.2s;\n  }\n\n  &__details,\n  &__details ul {\n    margin: auto;\n    padding: 0;\n    list-style: none;\n  }\n\n  &__details {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: -100%;\n    margin: auto;\n    transition: left 0.2s;\n    background: rgba(#000, 0.6);\n    color: $color_white;\n    padding: 10px;\n    width: 100%;\n    font-size: 0.9rem;\n\n    a {\n      text-decoration: dotted underline;\n    }\n\n    ul li {\n      display: inline-block;\n    }\n\n    &--author:before {\n      font: var(--fa-font-solid);\n      margin-right: 10px;\n      content: \"\\f007\";\n    }\n\n    &--date:before {\n      font: var(--fa-font-solid);\n      margin-right: 10px;\n      content: \"\\f133\";\n    }\n\n    &--tags {\n      ul:before {\n        font: var(--fa-font-solid);\n        content: \"\\f02b\";\n        margin-right: 10px;\n      }\n\n      li {\n        margin-right: 2px;\n\n        &:first-child {\n          margin-left: -4px;\n        }\n      }\n    }\n  }\n\n  &__description {\n    padding: 1rem;\n    background: $color_white;\n    position: relative;\n    z-index: 1;\n\n    h1,\n    h2 {\n      font-family: \"Fira Sans\", sans-serif;\n    }\n\n    &--title {\n      line-height: 1;\n      margin: 0;\n      font-size: 1.7rem;\n    }\n\n    &--subtitle {\n      font-size: 1rem;\n      font-weight: 300;\n      text-transform: uppercase;\n      color: $color_grey_dark;\n      margin-top: 5px;\n    }\n\n    &--read-more {\n      text-align: right;\n\n      a {\n        color: $color_prime;\n        display: inline-block;\n        position: relative;\n\n        &:after {\n          content: \"\\f061\";\n          font-weight: 900;\n          font: var(--fa-font-solid);\n          margin-left: -10px;\n          opacity: 0;\n          vertical-align: middle;\n          transition:\n            margin 0.3s,\n            opacity 0.3s;\n        }\n\n        &:hover:after {\n          margin-left: 5px;\n          opacity: 1;\n        }\n      }\n    }\n  }\n\n  p {\n    position: relative;\n    margin: 1rem 0 0;\n\n    &:first-of-type {\n      margin-top: 1.25rem;\n\n      &:before {\n        content: \"\";\n        position: absolute;\n        height: 5px;\n        background: $color_prime;\n        width: 35px;\n        top: -0.75rem;\n        border-radius: 3px;\n      }\n    }\n  }\n\n  &:hover {\n    .blog-card__details {\n      left: 0%;\n    }\n  }\n\n  @media (min-width: 640px) {\n    flex-direction: row;\n    max-width: 700px;\n\n    .blog-card__meta {\n      flex-basis: 40%;\n      height: auto;\n    }\n\n    .blog-card__description {\n      flex-basis: 60%;\n\n      &:before {\n        content: \"\";\n        background: #fff;\n        width: 30px;\n        position: absolute;\n        left: -10px;\n        top: 0;\n        bottom: 0;\n        z-index: -1;\n      }\n    }\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -676,10 +446,10 @@ module.exports = function (item) {
 
 /***/ }),
 
-/***/ "./src/scss/_post.scss":
-/*!*****************************!*\
-  !*** ./src/scss/_post.scss ***!
-  \*****************************/
+/***/ "./src/scss/_posts.scss":
+/*!******************************!*\
+  !*** ./src/scss/_posts.scss ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -698,7 +468,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_post_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./_post.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/_post.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_posts_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./_posts.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/_posts.scss");
 
       
       
@@ -720,12 +490,12 @@ options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWi
 options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
 options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_post_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_posts_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
 
 
 
 
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_post_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_post_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_post_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_posts_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_posts_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_posts_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -1007,26 +777,6 @@ module.exports = __webpack_require__.p + "fonts/FiraSans-Regular-36d608bce425166
 
 /***/ }),
 
-/***/ "./src/images/aiony-haust.jpg":
-/*!************************************!*\
-  !*** ./src/images/aiony-haust.jpg ***!
-  \************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "images/aiony-haust-31d4a04d35f7498e94d5.jpg";
-
-/***/ }),
-
-/***/ "./src/images/christopher-campbell.jpg":
-/*!*********************************************!*\
-  !*** ./src/images/christopher-campbell.jpg ***!
-  \*********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "images/christopher-campbell-1bfb6739bf9ac1a536c7.jpg";
-
-/***/ }),
-
 /***/ "./src/images/image-1.jpg":
 /*!********************************!*\
   !*** ./src/images/image-1.jpg ***!
@@ -1150,7 +900,7 @@ module.exports = __webpack_require__.p + "images/image-1-386f2ebc2dc95819c9f4.jp
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"post": 0
+/******/ 			"posts": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -1177,14 +927,14 @@ module.exports = __webpack_require__.p + "images/image-1-386f2ebc2dc95819c9f4.jp
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*********************!*\
-  !*** ./src/post.js ***!
-  \*********************/
+/*!**********************!*\
+  !*** ./src/posts.js ***!
+  \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _scss_post_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/_post.scss */ "./src/scss/_post.scss");
+/* harmony import */ var _scss_posts_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/_posts.scss */ "./src/scss/_posts.scss");
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=post.d8a933e7.js.map
+//# sourceMappingURL=posts.80ff308a.js.map
