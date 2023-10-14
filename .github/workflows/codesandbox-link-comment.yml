@@ -1,10 +1,12 @@
 name: Add codesandbox link
 
 on:
+  push:
+    branches: ["blog-site-carousel"]
   pull_request:
-    types: [opened]
-  pull_request_target:
-    types: [opened]
+    branches: ["blog-site-carousel"]
+permissions:
+  contents: write
 
 jobs:
   codesandbox-comment:

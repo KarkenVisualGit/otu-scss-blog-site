@@ -1,4 +1,4 @@
-# Макет сайта-блога &middot; [![codecov](https://codecov.io/github/KarkenVisualGit/otus-scss-blog-site/graph/badge.svg?token=3ip4khQLsU)](https://codecov.io/github/KarkenVisualGit/otus-scss-blog-site)
+# Макет сайта-блога &middot; [![codecov](https://codecov.io/github/KarkenVisualGit/otus-scss-blog-site/graph/badge.svg?token=3ip4khQLsU)](https://app.codecov.io/github/KarkenVisualGit/otus-scss-blog-site/tree/blog-site-carousel)
 
 > Данный сайт создан в рамках учебного задания по верстке сайта-блога с 4-мя страницами (главная, обратная связь, список записей, страница записи) с использованием препроцессора SCSS. На главной странице реализована работа карусели по принципу <https://getbootstrap.com/docs/4.0/components/carousel/#with-controls>
 
