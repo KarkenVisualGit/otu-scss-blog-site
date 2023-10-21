@@ -125,9 +125,13 @@
       border-radius: 50%;
       cursor: pointer;
 
+      &.active,
       &:hover,
       &:focus {
-        background-color: #666666;
+        background-color: #f00b0b;
+        width: 25px;
+        height: 25px;
+        cursor: grab;
       }
     }
   }

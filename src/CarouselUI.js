@@ -49,6 +49,7 @@ export default class CarouselUI {
         } else {
           this.prevSlide();
         }
+        this.updateBulletNav();
         e.preventDefault();
       },
       { passive: false }
@@ -73,6 +74,19 @@ export default class CarouselUI {
     clearInterval(this.autoPlayInterval);
   }
 
+  updateBulletNav() {
+    const bullets = this.container.querySelectorAll(
+      ".js-carousel-bulletNav-control"
+    );
+    bullets.forEach((bullet, index) => {
+      if (index === this.logic.getMarker()) {
+        bullet.classList.add("active");
+      } else {
+        bullet.classList.remove("active");
+      }
+    });
+  }
+
   updateMarker() {
     const position = this.logic.getMarker();
     this.selectedItem.classList.remove("carousel-item_isSelected");
@@ -80,6 +94,8 @@ export default class CarouselUI {
     this.selectedItem.classList.add("carousel-item_isSelected");
     this.carouselItems.forEach((item) => item.classList.add("hidden"));
     this.selectedItem.classList.remove("hidden");
+
+    this.updateBulletNav();
   }
 
   incrementSlide() {
