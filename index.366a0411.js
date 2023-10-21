@@ -50,15 +50,24 @@ __webpack_require__.r(__webpack_exports__);
 
 class CarouselUI {
   constructor(logic) {
+    let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     this.logic = logic;
+    this.options = {
+      containerSelector: ".carousel",
+      autoplay: true,
+      ...options
+    };
+    this.autoPlaying = this.options.autoplay;
     this.init();
-    this.autoPlay();
+    if (this.options.autoplay) {
+      this.autoPlay();
+    }
   }
   init() {
-    this.container = document.querySelector(".carousel");
+    this.container = document.querySelector(this.options.containerSelector);
     this.triggerNext = this.container.querySelector(".js-carousel-nav_next");
     this.triggerPrev = this.container.querySelector(".js-carousel-nav_prev");
-    this.carouselItems = Array.from(document.querySelectorAll(".carousel-item"));
+    this.carouselItems = Array.from(this.container.querySelectorAll(".carousel-item"));
     this.selectedItem = document.querySelector(".carousel-item_isSelected");
     this.marker = this.carouselItems.indexOf(this.selectedItem);
     this.bulletNav();
@@ -91,19 +100,25 @@ class CarouselUI {
       passive: false
     });
     this.container.addEventListener("mouseenter", () => {
-      this.stopAutoPlay();
+      if (this.options.autoplay) {
+        this.stopAutoPlay();
+      }
     });
     this.container.addEventListener("mouseleave", () => {
-      this.autoPlay();
+      if (this.options.autoplay && !this.autoPlaying) {
+        this.autoPlay();
+      }
     });
   }
   autoPlay() {
     this.autoPlayInterval = setInterval(() => {
       this.nextSlide();
     }, 5000);
+    this.autoPlaying = true;
   }
   stopAutoPlay() {
     clearInterval(this.autoPlayInterval);
+    this.autoPlaying = false;
   }
   updateBulletNav() {
     const bullets = this.container.querySelectorAll(".js-carousel-bulletNav-control");
@@ -123,12 +138,6 @@ class CarouselUI {
     this.carouselItems.forEach(item => item.classList.add("hidden"));
     this.selectedItem.classList.remove("hidden");
     this.updateBulletNav();
-  }
-  incrementSlide() {
-    this.marker = (this.marker + 1) % this.carouselItems.length;
-  }
-  decrementSlide() {
-    this.marker = this.marker === 0 ? this.carouselItems.length - 1 : this.marker - 1;
   }
   nextSlide() {
     this.logic.incrementSlide();
@@ -151,13 +160,21 @@ class CarouselUI {
     this.container.appendChild(bulletNav);
   }
   bulletNavControl(index) {
+    this.stopAutoPlay();
     this.logic.setMarker(index);
     this.updateMarker();
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
-  const logic = new _CarouselLogic_js__WEBPACK_IMPORTED_MODULE_0__["default"](document.querySelectorAll(".carousel-item").length);
-  return new CarouselUI(logic);
+  function initCarousel(containerSelector) {
+    const logic = new _CarouselLogic_js__WEBPACK_IMPORTED_MODULE_0__["default"](document.querySelectorAll(`${containerSelector} .carousel-item`).length);
+    return new CarouselUI(logic, {
+      containerSelector,
+      autoplay: true
+    });
+  }
+  initCarousel(".carousel1");
+  initCarousel(".carousel2");
 });
 
 /***/ }),
@@ -1238,4 +1255,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=index.da7e0447.js.map
+//# sourceMappingURL=index.366a0411.js.map
