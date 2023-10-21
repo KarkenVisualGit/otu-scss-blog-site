@@ -1,18 +1,29 @@
 import CarouselLogic from "./CarouselLogic.js";
 
 export default class CarouselUI {
-  constructor(logic) {
+  constructor(logic, options = {}) {
     this.logic = logic;
+
+    this.options = {
+      containerSelector: ".carousel",
+      autoplay: true,
+      ...options,
+    };
+
+    this.autoPlaying = this.options.autoplay;
     this.init();
-    this.autoPlay();
+
+    if (this.options.autoplay) {
+      this.autoPlay();
+    }
   }
 
   init() {
-    this.container = document.querySelector(".carousel");
+    this.container = document.querySelector(this.options.containerSelector);
     this.triggerNext = this.container.querySelector(".js-carousel-nav_next");
     this.triggerPrev = this.container.querySelector(".js-carousel-nav_prev");
     this.carouselItems = Array.from(
-      document.querySelectorAll(".carousel-item")
+      this.container.querySelectorAll(".carousel-item")
     );
     this.selectedItem = document.querySelector(".carousel-item_isSelected");
     this.marker = this.carouselItems.indexOf(this.selectedItem);
@@ -56,11 +67,15 @@ export default class CarouselUI {
     );
 
     this.container.addEventListener("mouseenter", () => {
-      this.stopAutoPlay();
+      if (this.options.autoplay) {
+        this.stopAutoPlay();
+      }
     });
 
     this.container.addEventListener("mouseleave", () => {
-      this.autoPlay();
+      if (this.options.autoplay && !this.autoPlaying) {
+        this.autoPlay();
+      }
     });
   }
 
@@ -68,10 +83,12 @@ export default class CarouselUI {
     this.autoPlayInterval = setInterval(() => {
       this.nextSlide();
     }, 5000);
+    this.autoPlaying = true;
   }
 
   stopAutoPlay() {
     clearInterval(this.autoPlayInterval);
+    this.autoPlaying = false;
   }
 
   updateBulletNav() {
@@ -89,6 +106,7 @@ export default class CarouselUI {
 
   updateMarker() {
     const position = this.logic.getMarker();
+
     this.selectedItem.classList.remove("carousel-item_isSelected");
     this.selectedItem = this.carouselItems[position];
     this.selectedItem.classList.add("carousel-item_isSelected");
@@ -96,15 +114,6 @@ export default class CarouselUI {
     this.selectedItem.classList.remove("hidden");
 
     this.updateBulletNav();
-  }
-
-  incrementSlide() {
-    this.marker = (this.marker + 1) % this.carouselItems.length;
-  }
-
-  decrementSlide() {
-    this.marker =
-      this.marker === 0 ? this.carouselItems.length - 1 : this.marker - 1;
   }
 
   nextSlide() {
@@ -133,14 +142,23 @@ export default class CarouselUI {
   }
 
   bulletNavControl(index) {
+    this.stopAutoPlay();
     this.logic.setMarker(index);
     this.updateMarker();
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const logic = new CarouselLogic(
-    document.querySelectorAll(".carousel-item").length
-  );
-  return new CarouselUI(logic);
+  function initCarousel(containerSelector) {
+    const logic = new CarouselLogic(
+      document.querySelectorAll(`${containerSelector} .carousel-item`).length
+    );
+    return new CarouselUI(logic, {
+      containerSelector,
+      autoplay: true,
+    });
+  }
+
+  initCarousel(".carousel1");
+  initCarousel(".carousel2");
 });

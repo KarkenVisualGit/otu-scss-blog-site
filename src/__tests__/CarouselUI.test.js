@@ -130,28 +130,28 @@ describe("CarouselUI", () => {
     const logic = new CarouselLogic(3);
     const ui = new CarouselUI(logic);
 
-    ui.incrementSlide();
-    expect(ui.marker).toBe(0);
+    ui.nextSlide();
+    expect(logic.getMarker()).toBe(1);
 
-    ui.incrementSlide();
-    expect(ui.marker).toBe(1);
+    ui.nextSlide();
+    expect(logic.getMarker()).toBe(2);
 
-    ui.incrementSlide();
-    expect(ui.marker).toBe(2);
+    ui.nextSlide();
+    expect(logic.getMarker()).toBe(0);
   });
 
   it("decrements slide correctly", () => {
     const logic = new CarouselLogic(3);
     const ui = new CarouselUI(logic);
 
-    ui.decrementSlide();
-    expect(ui.marker).toBe(1);
+    ui.prevSlide();
+    expect(logic.getMarker()).toBe(2);
 
-    ui.decrementSlide();
-    expect(ui.marker).toBe(0);
+    ui.prevSlide();
+    expect(logic.getMarker()).toBe(1);
 
-    ui.decrementSlide();
-    expect(ui.marker).toBe(2);
+    ui.prevSlide();
+    expect(logic.getMarker()).toBe(0);
   });
 
   it("handles nextSlide correctly", () => {
@@ -256,7 +256,14 @@ describe("CarouselUI event handlers", () => {
 describe("DOMContentLoaded event handler", () => {
   beforeEach(() => {
     document.body.innerHTML = `
-            <div class="carousel">
+            <div class="carousel1">
+                <div class="js-carousel-nav_next"></div>
+                <div class="js-carousel-nav_prev"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item carousel-item_isSelected"></div>
+            </div>
+            <div class="carousel2">
                 <div class="js-carousel-nav_next"></div>
                 <div class="js-carousel-nav_prev"></div>
                 <div class="carousel-item"></div>
@@ -271,12 +278,14 @@ describe("DOMContentLoaded event handler", () => {
       document.querySelectorAll(".js-carousel-bulletNav-control")
     ).toHaveLength(0);
 
-    const event = document.createEvent("Event");
-    event.initEvent("DOMContentLoaded", true, true);
+    const event = new Event("DOMContentLoaded", {
+      bubbles: true,
+      cancelable: true,
+    });
     window.document.dispatchEvent(event);
 
     expect(
       document.querySelectorAll(".js-carousel-bulletNav-control")
-    ).toHaveLength(3);
+    ).toHaveLength(6);
   });
 });
