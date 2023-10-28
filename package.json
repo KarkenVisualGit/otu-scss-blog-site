@@ -11,7 +11,7 @@
     "build-dev": "webpack --watch",
     "start-dev": "webpack serve",
     "start": "webpack serve --mode development -c webpack.config.js",
-    "test": "jest --updateSnapshot",
+    "test": "jest",
     "lint": "prettier --check . && eslint .",
     "lint:fix": "prettier --write . && eslint . --fix",
     "prepare": "husky install"
@@ -29,6 +29,9 @@
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.22.20",
+    "@testing-library/dom": "^9.3.3",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/user-event": "^14.5.1",
     "@types/jest": "^29.5.5",
     "at-rule-packer": "^0.4.1",
     "autoprefixer": "^10.4.16",

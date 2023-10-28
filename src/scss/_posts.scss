@@ -1,32 +1,42 @@
 @import "base";
 @import "common";
 
-.blog-card {
-  &__photo1 {
-    position: absolute;
-    background-image: url(../images/image-2.jpg);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.2s;
-  }
+.news {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: "Fira Sans", sans-serif;
 
-  @media (min-width: 640px) {
-    &.alt {
-      flex-direction: row-reverse;
+  &__item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 20px;
 
-      .blog-card__description {
-        &:before {
-          left: inherit;
-          right: -10px;
-        }
-      }
+    .news__date {
+      display: flex;
+      flex: 0 1 30%;
+      background-color: #3c707e;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      justify-content: center;
+      align-self: center;
+      align-items: center;
+      padding: 4px 8px;
+    }
 
-      .blog-card__details {
-        padding-left: 25px;
+    .news__text {
+      font-size: 12px;
+      color: #656565;
+      padding-left: 8px;
+
+      .news__link {
+        font-size: 14px;
+        font-weight: bold;
+        color: #000000;
+        text-decoration: none;
       }
     }
   }

@@ -1,9 +1,9 @@
 name: Deploy to GitHubPages
 on:
   push:
-    branches: ["blog-site"]
+    branches: ["blog-site-carousel"]
   pull_request:
-    branches: ["blog-site"]
+    branches: ["blog-site-carousel"]
 permissions:
   contents: write
 jobs:
